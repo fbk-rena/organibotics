@@ -11,7 +11,128 @@
 </head>
 
 <body>
-    <h1>Specific project data and options</h1>
+    <header>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Profile</a></li>
+            <li><a href="#!">Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Log Out</a></li>
+        </ul>
+        <nav class="amber darken-2">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Organibotics</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="home.html" class="left">Home</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">account_circle</i><i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <div class="row">
+            <section id="tasks" class="col s12 m9">
+                <h3 class="grey-text text-darken-2">Tasks</h3>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img src="https://dummyimage.com/30x200/1331d6/1331d6.jpg">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <div class="row">
+                                        <div class="col s9">
+                                            <h4>Task name</h4>
+                                            <p>Task description. I am good at containing small bits of information.</p>
+                                        </div>
+                                        <div class="col s3 center-align">
+                                            <img class="circle" src="https://dummyimage.com/100x100/dbdbdb/404040.jpg&text=DV" alt="priority">
+                                            <h6>Role</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <a>Estimated time <i class="material-icons">access_time</i> <span>5hrs</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img src="https://dummyimage.com/30x200/1331d6/1331d6.jpg">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <div class="row">
+                                        <div class="col s9">
+                                            <h4>Task name</h4>
+                                            <p>Task description. I am good at containing small bits of information.</p>
+                                        </div>
+                                        <div class="col s3 center-align">
+                                            <img class="circle" src="https://dummyimage.com/100x100/dbdbdb/404040.jpg&text=DV" alt="user">
+                                            <h6>Role</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <a>Estimated time <i class="material-icons">access_time</i> <span>5hrs</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="options" class="col s12 m3 center-align grey lighten-1">
+                <h3 class="grey-text text-darken-2">Options</h3>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" class="validate">
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                                <label for="disabled">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                This is an inline input field:
+                                <div class="input-field inline">
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                                </div>
+                            </div>
+                            <div class="col s12">
+                                <button type="submit" class="waves-effect waves-light btn">Agregar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <script src="../static/jquery/dist/jquery.min.js"></script>
     <script src="../static/materialize-css/dist/js/materialize.min.js"></script>
