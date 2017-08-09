@@ -8,9 +8,9 @@ const originRoots = {
 }
 
 const finalRoots = {
-    html: './public/',
-    js: './public/assets/js/',
-    css: './public/assets/css/'
+    html: './dist/',
+    js: './dist/assets/js/',
+    css: './dist/assets/css/'
 }
 
 gulp.task("processHTML", function () {
