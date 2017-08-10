@@ -13,3 +13,7 @@ nav .brand-logo {
 .button_align {
   text-align: center;
 }
+
+.margin {
+  margin-bottom: -7px;
+}
