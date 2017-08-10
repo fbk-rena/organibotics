@@ -1,7 +1,13 @@
-main {
+body {
+  background-image: url(../img/screencapture-crowdbotics.jpg);
+  background-size: auto;
+  background-position: center;
+}
+
+body main {
   padding-top: 20vh;
 }
 
-main h2 {
+body main h3 {
   font-family: 'Merriweather', serif;
 }
