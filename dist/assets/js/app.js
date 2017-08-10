@@ -1,3 +1,7 @@
+var loadPage = () => {
+     initApp();
+    initProjects();
+}
 var config = {
     apiKey: "AIzaSyD-edb9LcUW-C-zzPb5hLferKCArMYAd5U",
     authDomain: "organi-botics.firebaseapp.com",
@@ -7,20 +11,17 @@ var config = {
     messagingSenderId: "722197372073"
 };
 //DataBase
-var objDb = {
+/* objDb = {
     users: [],
     projects: []
-};
+};*/
 
-var saveUser = (users) => {
-    database.ref("/").set(users);
-}
-var saveProject = (projects) => {
-    database.ref("/").set(projects);
-}
+var saveUser = database.ref("users");
+
+var saveProject = database.ref("projects"); 
 
 firebase.initializeApp(config);
-var initApp = function () {
+var initApp = () => {
     firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
@@ -32,7 +33,7 @@ var initApp = function () {
                 var phoneNumber = user.phoneNumber;
                 var providerData = user.providerData;
                 user.getIdToken().then(function (accessToken) {
-                    objDb.users.push({
+                    saveUser.push({
                         displayName: displayName,
                         email: email,
                         emailVerified: emailVerified,
@@ -41,14 +42,11 @@ var initApp = function () {
                         uid: uid,
                         accessToken: accessToken,
                     })
-                    saveUser(objDb);
-                    document.getElementById('nombre').textContent = displayName;
+                    $('#nombre').text(displayName);
                 });
             } else {
                 // User is signed out.
-                document.getElementById('sign-in-status').textContent = 'Signed out';
-                document.getElementById('sign-in').textContent = 'Sign in';
-                document.getElementById('account-details').textContent = 'null';
+                location.href = 'https://agile-scrubland-33586.herokuapp.com/'
             }
         },
         function (error) {
@@ -56,18 +54,25 @@ var initApp = function () {
         });
 };
 var initProjects = function () {
-    var formNewProject = document.getElementById('new-project');
-    formNewProject.addEventListener('submit', function () {
-        var newProject = document.getElementById('np-name').value;
-        objDb.projects.push({
-            name: newProject
+    var formNewProject = $("#new-project");
+    formNewProject.click(function (e) {
+        e.preventDefault();
+        var newProject = $('#np-name').val();
+        var d = new Date();
+        var idP = d.getTime();
+        localStorage.setItem("nameProject", "newProject");
+        localStorage.setItem("idProject", "idP");
+        console.log(newProject);
+        saveProject.push({
+            nameProject: newProject,
+            idProject:idP
         })
-        saveProject(objDb);
         location.href = 'http://localhost:3000/views/project.html';
     })
 };
 var database = firebase.database();
-
-window.addEventListener('load', function () {
-    initApp()
-});
+$(document).ready(loadPage)
+/*window.addEventListener('load', function () {
+    initApp();
+    initProjects();
+});*/
