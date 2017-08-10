@@ -3,7 +3,10 @@ body{
 }
 nav{
 	padding: 0 1rem;
+	.brand-logo{
+		font-family: 'Merriweather', serif;
+	}
 }
-.brand-logo{
-font-family: 'Merriweather', serif;
+.button_align{
+	text-align: center;
 }
