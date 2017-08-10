@@ -1,7 +1,15 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 nav {
   padding: 0 1rem;
 }
 
+nav .brand-logo {
+  font-family: 'Merriweather', serif;
+}
+
 #options {
-  height: 90%;
+  height: 80vh;
 }
