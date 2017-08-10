@@ -8,15 +8,19 @@ var config = {
 };
 //DataBase
 var objDb = {
-    users: []
+    users: [],
+    projects: []
 };
 
-var guardarDatos = (users) => {
+var saveUser = (users) => {
     database.ref("/").set(users);
+}
+var saveProject = (projects) => {
+    database.ref("/").set(projects);
 }
 
 firebase.initializeApp(config);
-initApp = function () {
+var initApp = function () {
     firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
@@ -38,7 +42,7 @@ initApp = function () {
                         uid: uid,
                         accessToken: accessToken,
                     })
-                    guardarDatos(objDb);
+                    saveUser(objDb);
                 });
             } else {
                 // User is signed out.
@@ -51,6 +55,13 @@ initApp = function () {
             console.log(error);
         });
 };
+var initProjects = function (){
+    var newProject = document.getElementById('np-name').value;
+    objDb.projects.push({
+        name: newProject
+    })
+    saveProject(objDb);
+}
 var database = firebase.database();
 
 window.addEventListener('load', function () {
