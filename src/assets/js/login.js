@@ -12,7 +12,7 @@ var actual =  window.location.href;
 console.log(actual);
 
 var uiConfig = {
-    signInSuccessUrl: actual+'views/home.html ',
+    signInSuccessUrl: (actual+'views/home.html'),
     signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
