@@ -11,14 +11,14 @@ var config = {
     messagingSenderId: "722197372073"
 };
 //DataBase
-/* objDb = {
+ objDb = {
     users: [],
     projects: []
-};*/
+};
 
-var saveUser = database.ref("users");
+var saveUser = (users) => database.ref().set(users);
 
-var saveProject = database.ref("projects"); 
+var saveProject =(obj) => database.ref('/projects').set(obj.projects); 
 
 firebase.initializeApp(config);
 var initApp = () => {
@@ -33,7 +33,7 @@ var initApp = () => {
                 var phoneNumber = user.phoneNumber;
                 var providerData = user.providerData;
                 user.getIdToken().then(function (accessToken) {
-                    saveUser.push({
+                    objDb.users.push({
                         displayName: displayName,
                         email: email,
                         emailVerified: emailVerified,
@@ -42,6 +42,7 @@ var initApp = () => {
                         uid: uid,
                         accessToken: accessToken,
                     })
+                    saveUser(objDb)
                     $('#nombre').text(displayName);
                 });
             } else {
@@ -62,17 +63,49 @@ var initProjects = function () {
         var idP = d.getTime();
         localStorage.setItem("nameProject", "newProject");
         localStorage.setItem("idProject", "idP");
-        console.log(newProject);
-        saveProject.push({
+        console.log(nameProject);
+        console.log(idProject);
+        objDb.projects.push({
             nameProject: newProject,
             idProject:idP
         })
-        location.href = 'http://localhost:3000/views/project.html';
+        saveProject(objDb);
+        var listNewProject = "";
+        listNewProject = boilerProject.replace('__nameProject__', localStorage.getItem("nameProject")
+                                              .replace('__idProject__', localStorage.getItem("idProject"));
+        
+        newProject = " ";
     })
 };
+
+var boilerProject = `<h4 class="center-align">__nameProject__</h4>
+                    <div class="card horizontal">
+                      <div class="card-stacked">
+                        <div class="card-content">
+                          <p>#__idProject__</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="#">View detail</a>
+                        </div>
+                      </div>
+                    </div>`;
+
+/*var showPoject = (projects)=> {
+    var projectsList = $('#proyects-list');
+    projectsList.html('');
+    projects.forEach((project)=>{
+        projectsList.html(
+            boilerProject.replace('__nameProject__', projects.nameProject)
+        .replace('__idProject__', projects.idProject)
+        );
+    });
+};*/
 var database = firebase.database();
-$(document).ready(loadPage)
-/*window.addEventListener('load', function () {
-    initApp();
-    initProjects();
+/*database.ref("/projects").on('value', (snapshot)=>{
+	let projects = snapshot.val();
+	objDb.projects = projects;
+	showPoject(projects);
 });*/
+
+$(document).ready(loadPage);
+
