@@ -60,20 +60,18 @@ var initProjects = function () {
         e.preventDefault();
         var newProject = $('#np-name').val();
         var d = new Date();
-        var idP = d.getTime();
+        var n = d.getTime();
         localStorage.setItem("nameProject", "newProject");
         localStorage.setItem("idProject", "idP");
-        console.log(nameProject);
-        console.log(idProject);
         objDb.projects.push({
             nameProject: newProject,
-            idProject:idP
+            idProject:n
         })
         saveProject(objDb);
         var listNewProject = "";
-        listNewProject = boilerProject.replace('__nameProject__', localStorage.getItem("nameProject")
+        listNewProject = boilerProject.replace('__nameProject__', localStorage.getItem("nameProject"))
                                               .replace('__idProject__', localStorage.getItem("idProject"));
-        
+       $("#projectList").append(listNewProject);
         newProject = " ";
     })
 };
