@@ -2,16 +2,16 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-nav {
+body nav {
   padding: 0 1rem;
 }
 
-nav .brand-logo {
+body nav .brand-logo {
   font-family: 'Merriweather', serif;
 }
 
-.button_align {
-  text-align: center;
+body h4.tasks {
+  margin-left: 2vw;
 }
 
 .margin {

@@ -17,7 +17,7 @@
             <li><a href="#!">Profile</a></li>
             <li><a href="#!">Settings</a></li>
             <li class="divider"></li>
-            <li><a href="#!">Log Out</a></li>
+            <li><a href="../index.html">Log Out</a></li>
         </ul>
         <nav class="amber darken-2">
             <div class="nav-wrapper">
@@ -31,93 +31,99 @@
         </nav>
     </header>
 
-      <div class="container">
+    <div class="container">
         <div class="row">
-                <div class="col s12 m6">
-                    <h4 class="center-align">First Project</h4>
-                    <div class="card horizontal">
-                      <div class="card-stacked">
-                        <div class="card-content">
-                          <p>Project description.</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">View detail</a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <h4 class="center-align">Second Project</h4>
-                    <div class="card horizontal">
-                      <div class="card-stacked">
-                        <div class="card-content">
-                          <p>Project description.</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">View detail</a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#modal1">New Project<i class="large material-icons right">add</i></a>
-                </div>
             <div class="col s12 m6">
-                <h4 class="center-align">My Tasks</h4>
+                <div class="row valign-wrapper">
+                    <div class="col s6">
+                        <h4>My Projects</h4>
+                    </div>
+                    <div class="col s6">
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light btn modal-trigger blue darken-3 right" href="#modal1">New Project<i class="large material-icons right">add</i></a>
+                    </div>
+                </div>
+                <div class="card horizontal">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h5>First Project</h5>
+                            <p>Project description.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">View detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card horizontal">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h5>Second Project</h5>
+                            <p>Project description.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">View detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6">
+                <div class="row">
+                    <h4 class="tasks">My Tasks</h4>
+                </div>
                 <ul class="collapsible popout" data-collapsible="accordion">
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">format_list_bulleted</i>First Task</div>
-                      <div class="collapsible-body">
-                        <span>Task description</span>
-                        <a href="#">View detail</a>
-                      </div>
+                        <div class="collapsible-header"><i class="material-icons">format_list_bulleted</i>First Task</div>
+                        <div class="collapsible-body">
+                            <span>Task description</span>
+                            <a href="#">View detail</a>
+                        </div>
                     </li>
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">format_list_bulleted</i>Second Task</div>
-                      <div class="collapsible-body">
-                        <span>Task description</span>
-                        <a href="#">View detail</a>
-                    </div>
+                        <div class="collapsible-header"><i class="material-icons">format_list_bulleted</i>Second Task</div>
+                        <div class="collapsible-body">
+                            <span>Task description</span>
+                            <a href="#">View detail</a>
+                        </div>
                     </li>
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">format_list_bulleted</i>Third Task</div>
-                      <div class="collapsible-body">
-                        <span>Task description</span>
-                        <a href="#">View detail</a>
-                    </div>
+                        <div class="collapsible-header"><i class="material-icons">format_list_bulleted</i>Third Task</div>
+                        <div class="collapsible-body">
+                            <span>Task description</span>
+                            <a href="#">View detail</a>
+                        </div>
                     </li>
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">format_list_bulleted</i>Fourth Task</div>
-                      <div class="collapsible-body">
-                        <span>Task description</span>
-                        <a href="#">View detail</a>
-                    </div>
+                        <div class="collapsible-header"><i class="material-icons">format_list_bulleted</i>Fourth Task</div>
+                        <div class="collapsible-body">
+                            <span>Task description</span>
+                            <a href="#">View detail</a>
+                        </div>
                     </li>
                 </ul>
-              </div>
             </div>
         </div>
+    </div>
 
 
-            <!-- Modal Structure -->
-          <div id="modal1" class="modal">
-            <div id="new-project" class="modal-content">
-                <form class="col s12">
-                    <div class="input-field col s12">
-                      <h5>New Project</h5>
-                      <h6 class="margin">Project Name</h6>
-                      <input type="text" id="np-name">
-                    </div>
-                    <div class="modal-footer">
-                      <a type="button" href="project.html" class="modal-action modal-close waves-effect waves-light btn blue darken-3">Create</a>
-                    </div>
-                </form>
-             </div>
-           </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div id="new-project" class="modal-content">
+            <form class="col s12">
+                <div class="input-field col s12">
+                    <h5>New Project</h5>
+                    <h6 class="margin">Project Name</h6>
+                    <input type="text" id="np-name">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" href="#!" class="modal-action modal-close waves-effect waves-light btn blue darken-3">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <script src="../static/jquery/dist/jquery.min.js"></script>
     <script src="../static/materialize-css/dist/js/materialize.min.js"></script>
-    <script src="../static/firebase/firebase.js"></script>
-    <script src="../static/firebaseui/dist/firebaseui.js"></script>
     <script src="../assets/js/home.js"></script>
-    <script src="../assets/js/app.js"></script>
 </body>
 
 </html>
