@@ -55,13 +55,16 @@ var initApp = function () {
             console.log(error);
         });
 };
-var initProjects = function (){
-    var newProject = document.getElementById('np-name').value;
-    objDb.projects.push({
-        name: newProject
+var initProjects = function () {
+    var formNewProject = document.getElementById('new-project');
+    formNewProject.addEventListener('submit', function () {
+        var newProject = document.getElementById('np-name').value;
+        objDb.projects.push({
+            name: newProject
+        })
+        saveProject(objDb);
     })
-    saveProject(objDb);
-}
+};
 var database = firebase.database();
 
 window.addEventListener('load', function () {
