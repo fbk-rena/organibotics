@@ -7,9 +7,9 @@ var pageLoaded = function () {
 var getTaskData = function () {
     var taskName = $("#taskName").val();
     var taskDescrip = $("#taskDescrip").val();
+    var assignedTime = $("#assignedTime").val();
     var userSelected = $("#users").selectedIndex;
     var roleSelected = $("#roles").selectedIndex;
-    var assignedTime = $("#assignedTime").val();
     console.log(taskName, taskDescrip, userSelected, roleSelected, assignedTime);
 }
 
