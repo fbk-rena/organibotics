@@ -60,33 +60,34 @@ var initProjects = function () {
         e.preventDefault();
         var newProject = $('#np-name').val();
         var d = new Date();
-        var n = d.getTime();
+        var idP= d.getTime();
         localStorage.setItem("nameProject", "newProject");
         localStorage.setItem("idProject", "idP");
         objDb.projects.push({
             nameProject: newProject,
-            idProject:n
+            idProject:idP
         })
         saveProject(objDb);
         var listNewProject = "";
-        listNewProject = boilerProject.replace('__nameProject__', localStorage.getItem("nameProject"))
-                                              .replace('__idProject__', localStorage.getItem("idProject"));
+        listNewProject = boilerProject.replace('__nameProject__', newProject)
+                                              .replace('__idProject__', idP);
        $("#projectList").append(listNewProject);
         newProject = " ";
     })
 };
 
-var boilerProject = `<h4 class="center-align">__nameProject__</h4>
-                    <div class="card horizontal">
-                      <div class="card-stacked">
+var boilerProject = 
+`<div class="card horizontal">
+                    <div class="card-stacked">
                         <div class="card-content">
-                          <p>#__idProject__</p>
+                            <h5>__nameProject__</h5>
+                            <p>#__idProject__</p>
                         </div>
                         <div class="card-action">
-                          <a href="#">View detail</a>
+                            <a href="newproject.html">View detail</a>
                         </div>
-                      </div>
-                    </div>`;
+                    </div>
+                </div>`
 
 /*var showPoject = (projects)=> {
     var projectsList = $('#proyects-list');
