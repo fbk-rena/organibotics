@@ -1,15 +1,16 @@
-body{
-  font-family: 'Raleway', sans-serif;
+body {
+    font-family: 'Raleway', sans-serif;
+    nav {
+        padding: 0 1rem;
+        .brand-logo {
+            font-family: 'Merriweather', serif;
+        }
+    }
+    h4.tasks {
+        margin-left: 2vw;
+    }
 }
-nav{
-  padding: 0 1rem;
-  .brand-logo{
-    font-family: 'Merriweather', serif;
-  }
-}
-.button_align{
-  text-align: center;
-}
-.margin{
-  margin-bottom: -7px;
+
+.margin {
+    margin-bottom: -7px;
 }
