@@ -32,7 +32,6 @@ var initApp = function () {
                 var phoneNumber = user.phoneNumber;
                 var providerData = user.providerData;
                 user.getIdToken().then(function (accessToken) {
-                    document.getElementById('nombre').textContent = displayName;
                     objDb.users.push({
                         displayName: displayName,
                         email: email,
@@ -43,6 +42,7 @@ var initApp = function () {
                         accessToken: accessToken,
                     })
                     saveUser(objDb);
+                    document.getElementById('nombre').textContent = displayName;
                 });
             } else {
                 // User is signed out.
