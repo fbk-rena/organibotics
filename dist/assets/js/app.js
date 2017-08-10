@@ -63,6 +63,7 @@ var initProjects = function () {
             name: newProject
         })
         saveProject(objDb);
+        location.href = 'http://localhost:3000/views/project.html';
     })
 };
 var database = firebase.database();
