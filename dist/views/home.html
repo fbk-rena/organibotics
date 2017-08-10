@@ -25,6 +25,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="home.html" class="left">Home</a></li>
                     <!-- Dropdown Trigger -->
+                    <li id="nombre"></li>
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">account_circle</i><i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             </div>
@@ -104,23 +105,22 @@
             </div>
         </div>
     </div>
+            <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div  class="modal-content">
+                <form class="col s12">
+                    <div class="input-field col s12">
+                      <h5>New Project</h5>
+                      <h6 class="margin">Project Name</h6>
+                      <input type="text" id="np-name">
+                    </div>
+                    <div class="modal-footer">
+                      <button id="new-project" type="submit" href="#!" class="modal-action modal-close waves-effect waves-light btn blue darken-3">Create</button>
+                    </div>
+                </form>
+             </div>
+           </div>
 
-
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div id="new-project" class="modal-content">
-            <form class="col s12">
-                <div class="input-field col s12">
-                    <h5>New Project</h5>
-                    <h6 class="margin">Project Name</h6>
-                    <input type="text" id="np-name">
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" href="#!" class="modal-action modal-close waves-effect waves-light btn blue darken-3">Create</button>
-                </div>
-            </form>
-        </div>
-    </div>
     <script src="../static/jquery/dist/jquery.min.js"></script>
     <script src="../static/materialize-css/dist/js/materialize.min.js"></script>
     <script src="../assets/js/home.js"></script>
